@@ -23,8 +23,8 @@ Hecho en local:
 - Docs actualizados: referencias Digital Ocean → Supabase.
 
 Hecho en cloud:
-- Repo GitHub: `jos-sentido/meneria-mvp` (⚠️ typo en el nombre — "meneria"; si se renombra a mineria-mvp en GitHub Settings, actualizar el remote local; GitHub redirige y Vercel sigue el repo por ID). Push de main hecho.
-- Vercel: proyecto `meneria-mvp` (team sentido) vinculado al repo, Root Directory `apps/web`, framework Next.js. Primer deploy Ready. (Hubo un proyecto duplicado `mineria-mvp` sin deploys; ya eliminado.)
+- Repo GitHub: `jos-sentido/mineria-mvp` (privado). Push de main hecho.
+- Vercel: proyecto `mineria-mvp` (team sentido) vinculado al repo, Root Directory `apps/web`, framework Next.js, auto-deploy funcionando.
 
 Pendiente (requiere acción manual de Jos):
 1. `npx supabase login` + crear proyecto + `npx supabase link` + `npx supabase db push`.
