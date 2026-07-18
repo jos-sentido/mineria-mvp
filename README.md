@@ -29,7 +29,8 @@ Software a la medida para operación de perforación multi-sitio: app móvil off
 - [x] Análisis de referencia (Krux)
 - [x] Spec funcional + modelo de datos + pantallas + backlog
 - [x] Bootstrap monorepo: apps/web (Next.js) + apps/mobile (Expo) + packages/shared + CI + migración inicial Supabase
-- [ ] Setup cloud: crear repo GitHub + proyecto Supabase + conectar Vercel ← **pasos manuales, ver §Setup**
+- [x] Repo GitHub (`jos-sentido/meneria-mvp`) + Vercel conectado (auto-deploy desde `apps/web`)
+- [ ] Proyecto Supabase cloud + aplicar migraciones (`supabase login` → `link` → `db push`)
 - [ ] Discovery con cliente (10 preguntas abiertas en docs/01 §9)
 - [ ] Sprint S0 (semana 0 del backlog)
 

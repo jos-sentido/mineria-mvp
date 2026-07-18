@@ -22,12 +22,15 @@ Hecho en local:
 - CI GitHub Actions (lint + typecheck + build web).
 - Docs actualizados: referencias Digital Ocean → Supabase.
 
+Hecho en cloud:
+- Repo GitHub: `jos-sentido/meneria-mvp` (⚠️ typo en el nombre — "meneria"; si se renombra a mineria-mvp en GitHub Settings, actualizar el remote local; GitHub redirige y Vercel sigue el repo por ID). Push de main hecho.
+- Vercel: proyecto `meneria-mvp` (team sentido) vinculado al repo, Root Directory `apps/web`, framework Next.js. Primer deploy Ready. (Hubo un proyecto duplicado `mineria-mvp` sin deploys; ya eliminado.)
+
 Pendiente (requiere acción manual de Jos):
-1. Crear repo `jos-sentido/mineria-mvp` (privado) en github.com/new y hacer `git push -u origin main` (remote ya configurado, SSH ya autenticado como jos-sentido).
-2. `npx supabase login` + crear proyecto + `npx supabase link` + `npx supabase db push`.
-3. Conectar Vercel al repo con root directory `apps/web` (CLI ya autenticado como jos-sentido).
-4. Validar migración local con Docker: `npx supabase start` (no había Docker corriendo en el setup).
-5. Seguir backlog: docs/05 sprint S0-S1.
+1. `npx supabase login` + crear proyecto + `npx supabase link` + `npx supabase db push`.
+2. Validar migración local con Docker: `npx supabase start` (no había Docker corriendo en el setup).
+3. Cargar env vars de Supabase en Vercel y en `.env.local` cuando exista el proyecto.
+4. Seguir backlog: docs/05 sprint S0-S1.
 
 ## Contexto comercial (no técnico)
 
