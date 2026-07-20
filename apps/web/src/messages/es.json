@@ -1,0 +1,45 @@
+{
+  "app": {
+    "name": "Perforación Zacatecas",
+    "tagline": "Gestión de perforación minera"
+  },
+  "auth": {
+    "title": "Iniciar sesión",
+    "subtitle": "Accede con tu cuenta corporativa",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@empresa.mx",
+    "password": "Contraseña",
+    "submit": "Entrar",
+    "submitting": "Entrando…",
+    "errorInvalid": "Correo o contraseña incorrectos",
+    "errorGeneric": "No se pudo iniciar sesión. Intenta de nuevo.",
+    "validationEmail": "Ingresa un correo válido",
+    "validationPassword": "La contraseña debe tener al menos 8 caracteres",
+    "signOut": "Cerrar sesión"
+  },
+  "nav": {
+    "dashboard": "Tablero",
+    "dsrs": "Reportes (DSR)",
+    "holes": "Pozos",
+    "programs": "Programa",
+    "contracts": "Contratos",
+    "billing": "Facturación",
+    "catalogs": "Catálogos",
+    "admin": "Administración"
+  },
+  "dashboard": {
+    "title": "Tablero",
+    "welcome": "Bienvenido, {name}",
+    "kpiMetersMonth": "Metros del mes",
+    "kpiActiveRigs": "Rigs activos",
+    "kpiPendingDsrs": "DSRs por aprobar",
+    "kpiStandby": "Standby del mes",
+    "emptyHint": "Los indicadores se llenarán cuando haya captura de DSRs (Sprint S4)."
+  },
+  "common": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "comingSoon": "Próximamente"
+  }
+}

@@ -27,10 +27,17 @@ Hecho en cloud:
 - Vercel: proyecto `mineria-mvp` (team sentido) vinculado al repo, Root Directory `apps/web`, framework Next.js, auto-deploy funcionando.
 - Supabase: proyecto `mniwqxkznqpxvbxkfmds` con integración GitHub (aplica `supabase/migrations/` en cada push a main — migración inicial ya aplicada y verificada) e integración Vercel (env vars inyectadas en Production). `.env.local` de web y `.env` de mobile ya tienen URL + anon key.
 
+Sprint S1 (hecho):
+- Web: theme con tokens de la propuesta (ocre #C28B47 + cyan #4FB6C9, dark default), shadcn/ui (ojo: usa Base UI, patrón `render={}` no `asChild`), i18n next-intl por cookie sin prefijo de ruta (ES default), auth Supabase SSR completo (middleware protege todo excepto /login), shell dashboard (sidebar + header + user menu + switcher idioma), login react-hook-form + zod. Verificado en browser contra Supabase cloud.
+- Mobile: i18n ES/EN (i18n-js + expo-localization), supabase client con sesión en expo-secure-store, login + guard con Stack.Protected de expo-router, SQLite (expo-sqlite + drizzle-orm) con tablas dsr_drafts y sync_queue (bootstrap SQL idempotente; migrar a drizzle-kit en S4). Template demo de Expo eliminado.
+- CI ahora corre typecheck de los 3 paquetes.
+
 Pendiente:
-1. Validar migración local con Docker: `npx supabase start` (requiere Docker corriendo).
-2. Cuando haya código server-side que use `SUPABASE_SERVICE_ROLE_KEY` en previews: agregarla a Preview manualmente (valor en Supabase Dashboard → Settings → API; en Vercel es write-only y no se puede copiar). Las `NEXT_PUBLIC_*` ya están en Production + Preview + Development.
-3. Seguir backlog: docs/05 sprint S0-S1.
+1. Crear usuario de prueba en Supabase Dashboard → Authentication → Users (no hay signup UI a propósito) para probar login end-to-end.
+2. S1-MOB-05: pipeline EAS build (requiere `npx eas login` — cuenta Expo de Jos).
+3. Validar migración local con Docker: `npx supabase start` (requiere Docker corriendo).
+4. `SUPABASE_SERVICE_ROLE_KEY` en Preview cuando se necesite (write-only en Vercel, copiar del dashboard Supabase).
+5. Seguir backlog: docs/05 sprint S2.
 
 ## Contexto comercial (no técnico)
 

@@ -1,0 +1,45 @@
+{
+  "app": {
+    "name": "Perforación Zacatecas",
+    "tagline": "Mining drilling management"
+  },
+  "auth": {
+    "title": "Sign in",
+    "subtitle": "Access with your corporate account",
+    "email": "Email",
+    "emailPlaceholder": "you@company.mx",
+    "password": "Password",
+    "submit": "Sign in",
+    "submitting": "Signing in…",
+    "errorInvalid": "Invalid email or password",
+    "errorGeneric": "Could not sign in. Please try again.",
+    "validationEmail": "Enter a valid email",
+    "validationPassword": "Password must be at least 8 characters",
+    "signOut": "Sign out"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "dsrs": "Reports (DSR)",
+    "holes": "Holes",
+    "programs": "Program",
+    "contracts": "Contracts",
+    "billing": "Billing",
+    "catalogs": "Catalogs",
+    "admin": "Administration"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome, {name}",
+    "kpiMetersMonth": "Meters this month",
+    "kpiActiveRigs": "Active rigs",
+    "kpiPendingDsrs": "DSRs pending approval",
+    "kpiStandby": "Standby this month",
+    "emptyHint": "KPIs will populate once DSR capture ships (Sprint S4)."
+  },
+  "common": {
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English",
+    "comingSoon": "Coming soon"
+  }
+}

@@ -9,6 +9,8 @@ allowBuilds:
   esbuild: true
   '@tailwindcss/oxide': true
   better-sqlite3: true
+  '@parcel/watcher': true
+  '@swc/core': true
 
 minimumReleaseAgeExclude:
   - '@expo/cli@57.0.9'
