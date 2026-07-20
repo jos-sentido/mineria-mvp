@@ -3,7 +3,9 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+// standardSchemaResolver: evita el acople de tipos a la versión exacta de zod
+// (zodResolver rompía el build en Vercel por dos copias de zod v4)
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { z } from "zod";
 import { useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase/client";
@@ -29,7 +31,7 @@ export function LoginForm() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<FormValues>({ resolver: zodResolver(schema) });
+  } = useForm<FormValues>({ resolver: standardSchemaResolver(schema) });
 
   async function onSubmit(values: FormValues) {
     setServerError(null);
