@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/table";
 import { DeleteButton } from "@/components/crud/delete-button";
 import { ConsumableDialog } from "./consumable-dialog";
+import { ImportDialog } from "./import-dialog";
 import { deleteConsumable } from "./actions";
 
 export default async function ConsumablesPage() {
@@ -31,13 +32,16 @@ export default async function ConsumablesPage() {
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{t("description")}</p>
-        <ConsumableDialog
-          trigger={
-            <Button size="sm">
-              <Plus className="size-4" /> {t("new")}
-            </Button>
-          }
-        />
+        <div className="flex gap-2">
+          <ImportDialog />
+          <ConsumableDialog
+            trigger={
+              <Button size="sm">
+                <Plus className="size-4" /> {t("new")}
+              </Button>
+            }
+          />
+        </div>
       </div>
 
       {rows.length === 0 ? (

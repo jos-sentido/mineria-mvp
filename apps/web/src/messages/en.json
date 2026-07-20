@@ -59,8 +59,33 @@
       "sites": "Sites",
       "rigs": "Rigs",
       "drillers": "Drillers",
+      "crews": "Crews",
       "activities": "Activities",
-      "consumables": "Consumables"
+      "consumables": "Consumables",
+      "regions": "Regions"
+    },
+    "crews": {
+      "description": "Crews and their members",
+      "new": "New crew",
+      "newTitle": "New crew",
+      "editTitle": "Edit crew",
+      "name": "Name",
+      "rig": "Assigned rig",
+      "noRig": "Unassigned",
+      "lead": "Lead driller",
+      "noLead": "No lead",
+      "leadTag": "lead",
+      "members": "Members",
+      "noDrillers": "Register drillers in their catalog first."
+    },
+    "regions": {
+      "description": "Operating regions (group sites)",
+      "new": "New region",
+      "newTitle": "New region",
+      "editTitle": "Edit region",
+      "name": "Name",
+      "country": "Country (ISO)",
+      "timezone": "Timezone"
     },
     "sites": {
       "description": "Mines and operation sites",
@@ -72,7 +97,9 @@
       "coords": "Coordinates",
       "lat": "Latitude",
       "lng": "Longitude",
-      "altitude": "Altitude (m)"
+      "altitude": "Altitude (m)",
+      "region": "Region",
+      "noRegion": "No region"
     },
     "rigs": {
       "description": "Drilling rigs",
@@ -148,6 +175,18 @@
         "ADDITIVE": "Additive",
         "CEMENT": "Cement",
         "OTHER": "Other"
+      },
+      "import": {
+        "button": "Import CSV",
+        "title": "Import consumables",
+        "hint": "Columns: code, name, category, unit, default_cost, currency. Existing codes get updated.",
+        "template": "Download template",
+        "errorEmpty": "The file has no data rows",
+        "errorHeader": "Header must include at least: code, name",
+        "preview": "{count} rows ready to import",
+        "import": "Import",
+        "importing": "Importing…",
+        "done": "{imported} imported · {invalid} invalid rows skipped"
       }
     }
   },

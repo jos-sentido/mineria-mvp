@@ -1,8 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Plus, Pencil } from "lucide-react";
-import type { Site } from "@mineria/shared";
 import { createClient } from "@/lib/supabase/server";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -13,27 +11,25 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { DeleteButton } from "@/components/crud/delete-button";
-import { SiteDialog } from "./site-dialog";
-import { deleteSite } from "./actions";
+import { RegionDialog, type RegionRow } from "./region-dialog";
+import { deleteRegion } from "./actions";
 
-export default async function SitesPage() {
-  const t = await getTranslations("catalogs.sites");
+export default async function RegionsPage() {
+  const t = await getTranslations("catalogs.regions");
   const tCrud = await getTranslations("crud");
   const supabase = await createClient();
-  const [{ data: sites }, { data: regions }] = await Promise.all([
-    supabase.from("sites").select("*").order("name"),
-    supabase.from("regions").select("id, name").order("name"),
-  ]);
+  const { data: regions } = await supabase
+    .from("regions")
+    .select("id, name, country, timezone")
+    .order("name");
 
-  const rows = (sites ?? []) as Site[];
-  const regionOptions = (regions ?? []) as { id: string; name: string }[];
+  const rows = (regions ?? []) as RegionRow[];
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{t("description")}</p>
-        <SiteDialog
-          regions={regionOptions}
+        <RegionDialog
           trigger={
             <Button size="sm">
               <Plus className="size-4" /> {t("new")}
@@ -50,37 +46,24 @@ export default async function SitesPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>{t("code")}</TableHead>
               <TableHead>{t("name")}</TableHead>
-              <TableHead>{t("coords")}</TableHead>
-              <TableHead>{tCrud("status")}</TableHead>
+              <TableHead>{t("country")}</TableHead>
+              <TableHead>{t("timezone")}</TableHead>
               <TableHead className="w-24" />
             </TableRow>
           </TableHeader>
           <TableBody>
-            {rows.map((site) => (
-              <TableRow key={site.id}>
-                <TableCell className="font-mono">{site.code}</TableCell>
-                <TableCell>{site.name}</TableCell>
-                <TableCell className="font-mono text-xs text-muted-foreground">
-                  {site.lat != null && site.lng != null
-                    ? `${site.lat.toFixed(5)}, ${site.lng.toFixed(5)}`
-                    : "—"}
-                </TableCell>
-                <TableCell>
-                  <Badge
-                    variant={site.status === "ACTIVE" ? "default" : "secondary"}
-                  >
-                    {site.status === "ACTIVE"
-                      ? tCrud("active")
-                      : tCrud("inactive")}
-                  </Badge>
+            {rows.map((region) => (
+              <TableRow key={region.id}>
+                <TableCell>{region.name}</TableCell>
+                <TableCell className="font-mono">{region.country}</TableCell>
+                <TableCell className="text-muted-foreground">
+                  {region.timezone}
                 </TableCell>
                 <TableCell>
                   <div className="flex justify-end gap-1">
-                    <SiteDialog
-                      site={site}
-                      regions={regionOptions}
+                    <RegionDialog
+                      region={region}
                       trigger={
                         <Button
                           variant="ghost"
@@ -92,8 +75,8 @@ export default async function SitesPage() {
                       }
                     />
                     <DeleteButton
-                      action={deleteSite.bind(null, site.id)}
-                      itemLabel={site.name}
+                      action={deleteRegion.bind(null, region.id)}
+                      itemLabel={region.name}
                     />
                   </div>
                 </TableCell>

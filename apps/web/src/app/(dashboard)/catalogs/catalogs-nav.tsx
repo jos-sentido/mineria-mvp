@@ -9,8 +9,10 @@ const TABS = [
   { key: "sites", href: "/catalogs/sites" },
   { key: "rigs", href: "/catalogs/rigs" },
   { key: "drillers", href: "/catalogs/drillers" },
+  { key: "crews", href: "/catalogs/crews" },
   { key: "activities", href: "/catalogs/activities" },
   { key: "consumables", href: "/catalogs/consumables" },
+  { key: "regions", href: "/catalogs/regions" },
 ] as const;
 
 export function CatalogsNav() {

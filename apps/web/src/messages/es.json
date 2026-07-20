@@ -59,8 +59,33 @@
       "sites": "Sitios",
       "rigs": "Rigs",
       "drillers": "Perforistas",
+      "crews": "Cuadrillas",
       "activities": "Actividades",
-      "consumables": "Consumibles"
+      "consumables": "Consumibles",
+      "regions": "Regiones"
+    },
+    "crews": {
+      "description": "Cuadrillas y sus integrantes",
+      "new": "Nueva cuadrilla",
+      "newTitle": "Nueva cuadrilla",
+      "editTitle": "Editar cuadrilla",
+      "name": "Nombre",
+      "rig": "Rig asignado",
+      "noRig": "Sin asignar",
+      "lead": "Perforista líder",
+      "noLead": "Sin líder",
+      "leadTag": "líder",
+      "members": "Integrantes",
+      "noDrillers": "Primero registra perforistas en su catálogo."
+    },
+    "regions": {
+      "description": "Regiones operativas (agrupan sitios)",
+      "new": "Nueva región",
+      "newTitle": "Nueva región",
+      "editTitle": "Editar región",
+      "name": "Nombre",
+      "country": "País (ISO)",
+      "timezone": "Zona horaria"
     },
     "sites": {
       "description": "Minas y sitios de operación",
@@ -72,7 +97,9 @@
       "coords": "Coordenadas",
       "lat": "Latitud",
       "lng": "Longitud",
-      "altitude": "Altitud (m)"
+      "altitude": "Altitud (m)",
+      "region": "Región",
+      "noRegion": "Sin región"
     },
     "rigs": {
       "description": "Máquinas de perforación",
@@ -148,6 +175,18 @@
         "ADDITIVE": "Aditivo",
         "CEMENT": "Cemento",
         "OTHER": "Otro"
+      },
+      "import": {
+        "button": "Importar CSV",
+        "title": "Importar consumibles",
+        "hint": "Columnas: code, name, category, unit, default_cost, currency. Los códigos existentes se actualizan.",
+        "template": "Descargar plantilla",
+        "errorEmpty": "El archivo no tiene filas de datos",
+        "errorHeader": "El encabezado debe incluir al menos: code, name",
+        "preview": "{count} filas listas para importar",
+        "import": "Importar",
+        "importing": "Importando…",
+        "done": "{imported} importados · {invalid} filas inválidas omitidas"
       }
     }
   },

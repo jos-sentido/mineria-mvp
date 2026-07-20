@@ -37,7 +37,8 @@ Sprint S2 (en curso):
 - Web /catalogs con 5 CRUDs: sitios, rigs, perforistas, actividades, consumibles (server components + server actions + dialogs, i18n completo). Nav "Catálogos" habilitado.
 - Ojo Base UI Select: pasar `items` al Root o el trigger muestra el valor crudo en vez del label (resuelto en components/crud/form-select.tsx).
 - Usuario jos@sentido.mx ya con perfil ACTIVE + rol TENANT_ADMIN en tenant demo (migración 20260720000002) — puede escribir en catálogos.
-- Falta de S2: UI de cuadrillas/crew_members, import CSV consumibles (S2-WEB-05), UI regiones, pantalla B.24 datos maestros.
+- Segunda entrega S2: UI cuadrillas con asignación de integrantes (reemplazo completo de crew_members al guardar), import CSV de consumibles (parser propio client-side + upsert onConflict tenant_id,code, máx 1000 filas), UI regiones + select de región en sitios. Los 7 tabs de catálogos completos.
+- S2 cerrado salvo pantalla B.24 (datos maestros hub) que se cubrirá con el admin del tenant en S3.
 
 Pendiente:
 1. S1-MOB-05: pipeline EAS build (requiere `npx eas login` — cuenta Expo de Jos).

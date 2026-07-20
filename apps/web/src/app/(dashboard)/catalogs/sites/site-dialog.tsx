@@ -17,11 +17,15 @@ import { Label } from "@/components/ui/label";
 import { FormSelect } from "@/components/crud/form-select";
 import { upsertSite } from "./actions";
 
+const NO_REGION = "__none__";
+
 export function SiteDialog({
   site,
+  regions,
   trigger,
 }: {
   site?: Site;
+  regions: { id: string; name: string }[];
   trigger: React.ReactElement;
 }) {
   const t = useTranslations("catalogs.sites");
@@ -29,6 +33,9 @@ export function SiteDialog({
   const [open, setOpen] = useState(false);
   const [pending, startTransition] = useTransition();
   const [status, setStatus] = useState<string>(site?.status ?? "ACTIVE");
+  const [regionId, setRegionId] = useState<string>(
+    site?.region_id ?? NO_REGION,
+  );
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -43,6 +50,7 @@ export function SiteDialog({
         name: String(f.get("name") ?? ""),
         code: String(f.get("code") ?? ""),
         status: status as "ACTIVE" | "INACTIVE",
+        region_id: regionId === NO_REGION ? null : regionId,
         altitude_m: num("altitude_m"),
         lat: num("lat"),
         lng: num("lng"),
@@ -103,6 +111,18 @@ export function SiteDialog({
                 type="number"
                 step="any"
                 defaultValue={site?.lng ?? ""}
+              />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="site-region">{t("region")}</Label>
+              <FormSelect
+                id="site-region"
+                value={regionId}
+                onChange={setRegionId}
+                options={[
+                  { value: NO_REGION, label: t("noRegion") },
+                  ...regions.map((r) => ({ value: r.id, label: r.name })),
+                ]}
               />
             </div>
             <div className="flex flex-col gap-1.5">

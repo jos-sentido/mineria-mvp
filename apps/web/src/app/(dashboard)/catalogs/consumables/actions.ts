@@ -51,6 +51,42 @@ export async function upsertConsumable(
   return {};
 }
 
+const importRowSchema = consumableSchema.extend({
+  default_cost: z.number().nonnegative().nullable(),
+});
+
+export async function importConsumables(
+  rows: unknown[],
+): Promise<{ error?: string; imported?: number; invalid?: number }> {
+  if (!Array.isArray(rows) || rows.length === 0)
+    return { error: "Archivo vacío" };
+  if (rows.length > 1000) return { error: "Máximo 1000 filas por importación" };
+
+  const valid: ConsumableInput[] = [];
+  let invalid = 0;
+  for (const row of rows) {
+    const parsed = importRowSchema.safeParse(row);
+    if (parsed.success) valid.push(parsed.data);
+    else invalid++;
+  }
+  if (valid.length === 0) return { error: "Ninguna fila válida", invalid };
+
+  const supabase = await createClient();
+  const tenantId = await getTenantId(supabase);
+  if (!tenantId) return { error: "Sin perfil de tenant" };
+
+  const { error } = await supabase
+    .from("consumables")
+    .upsert(
+      valid.map((v) => ({ ...v, tenant_id: tenantId })),
+      { onConflict: "tenant_id,code" },
+    );
+  if (error) return { error: error.message };
+
+  revalidatePath("/catalogs/consumables");
+  return { imported: valid.length, invalid };
+}
+
 export async function deleteConsumable(
   id: string,
 ): Promise<{ error?: string }> {

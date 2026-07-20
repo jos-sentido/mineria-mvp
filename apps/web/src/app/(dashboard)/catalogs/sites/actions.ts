@@ -9,6 +9,7 @@ const siteSchema = z.object({
   name: z.string().min(1),
   code: z.string().min(1),
   status: z.enum(["ACTIVE", "INACTIVE"]),
+  region_id: z.uuid().nullable(),
   altitude_m: z.number().int().nullable(),
   lat: z.number().min(-90).max(90).nullable(),
   lng: z.number().min(-180).max(180).nullable(),
