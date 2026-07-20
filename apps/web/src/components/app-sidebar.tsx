@@ -22,7 +22,7 @@ const NAV_ITEMS = [
   { key: "programs", href: "/programs", icon: CalendarRange, enabled: false },
   { key: "contracts", href: "/contracts", icon: FileText, enabled: false },
   { key: "billing", href: "/billing", icon: Receipt, enabled: false },
-  { key: "catalogs", href: "/catalogs", icon: BookOpen, enabled: false },
+  { key: "catalogs", href: "/catalogs", icon: BookOpen, enabled: true },
   { key: "admin", href: "/admin", icon: Settings2, enabled: false },
 ] as const;
 
@@ -43,7 +43,8 @@ export function AppSidebar() {
       </div>
       <nav className="flex flex-1 flex-col gap-1 p-2">
         {NAV_ITEMS.map(({ key, href, icon: Icon, enabled }) => {
-          const active = pathname === href;
+          const active =
+            href === "/" ? pathname === "/" : pathname.startsWith(href);
           return (
             <Link
               key={key}

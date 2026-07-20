@@ -36,6 +36,121 @@
     "kpiStandby": "Standby this month",
     "emptyHint": "KPIs will populate once DSR capture ships (Sprint S4)."
   },
+  "crud": {
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleted": "Deleted",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "cancel": "Cancel",
+    "empty": "No records yet. Create the first one with the button above.",
+    "yes": "Yes",
+    "no": "No",
+    "confirmDeleteTitle": "Delete record?",
+    "confirmDeleteBody": "\"{item}\" will be deleted. This cannot be undone."
+  },
+  "catalogs": {
+    "title": "Catalogs",
+    "nav": {
+      "sites": "Sites",
+      "rigs": "Rigs",
+      "drillers": "Drillers",
+      "activities": "Activities",
+      "consumables": "Consumables"
+    },
+    "sites": {
+      "description": "Mines and operation sites",
+      "new": "New site",
+      "newTitle": "New site",
+      "editTitle": "Edit site",
+      "name": "Name",
+      "code": "Code",
+      "coords": "Coordinates",
+      "lat": "Latitude",
+      "lng": "Longitude",
+      "altitude": "Altitude (m)"
+    },
+    "rigs": {
+      "description": "Drilling rigs",
+      "new": "New rig",
+      "newTitle": "New rig",
+      "editTitle": "Edit rig",
+      "code": "Code",
+      "type": "Type",
+      "brand": "Brand",
+      "model": "Model",
+      "brandModel": "Brand / model",
+      "serial": "Serial number",
+      "site": "Site",
+      "noSite": "Unassigned",
+      "types": {
+        "DIAMOND_CORE": "Diamond core",
+        "RC": "Reverse circulation",
+        "PERCUSSION": "Percussion",
+        "TUNNELING": "Tunneling",
+        "OTHER": "Other"
+      },
+      "statuses": {
+        "OPERATIONAL": "Operational",
+        "MAINTENANCE": "Maintenance",
+        "INACTIVE": "Inactive",
+        "MOVING": "Moving"
+      }
+    },
+    "drillers": {
+      "description": "Drilling crew members",
+      "new": "New driller",
+      "newTitle": "New driller",
+      "editTitle": "Edit driller",
+      "fullName": "Full name",
+      "employeeCode": "Employee code",
+      "baseRate": "Base rate",
+      "currency": "Currency"
+    },
+    "activities": {
+      "description": "Activity catalog for DSR capture",
+      "new": "New activity",
+      "newTitle": "New activity",
+      "editTitle": "Edit activity",
+      "code": "Code",
+      "labelEs": "Label (ES)",
+      "labelEn": "Label (EN)",
+      "category": "Category",
+      "billable": "Billable",
+      "categories": {
+        "DRILLING": "Drilling",
+        "MOVING": "Moving",
+        "STANDBY": "Standby",
+        "MAINTENANCE": "Maintenance",
+        "SAFETY": "Safety",
+        "OTHER": "Other"
+      }
+    },
+    "consumables": {
+      "description": "Consumables catalog",
+      "new": "New consumable",
+      "newTitle": "New consumable",
+      "editTitle": "Edit consumable",
+      "code": "Code",
+      "name": "Name",
+      "category": "Category",
+      "unit": "Unit",
+      "defaultCost": "Default cost",
+      "currency": "Currency",
+      "categories": {
+        "DRILL_BIT": "Drill bit",
+        "LUBRICANT": "Lubricant",
+        "WATER": "Water",
+        "ADDITIVE": "Additive",
+        "CEMENT": "Cement",
+        "OTHER": "Other"
+      }
+    }
+  },
   "common": {
     "language": "Language",
     "spanish": "Spanish",

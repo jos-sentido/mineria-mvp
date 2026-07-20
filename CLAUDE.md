@@ -32,12 +32,18 @@ Sprint S1 (hecho):
 - Mobile: i18n ES/EN (i18n-js + expo-localization), supabase client con sesión en expo-secure-store, login + guard con Stack.Protected de expo-router, SQLite (expo-sqlite + drizzle-orm) con tablas dsr_drafts y sync_queue (bootstrap SQL idempotente; migrar a drizzle-kit en S4). Template demo de Expo eliminado.
 - CI ahora corre typecheck de los 3 paquetes.
 
+Sprint S2 (en curso):
+- Migración `20260720000003_master_data.sql`: regions, sites (PostGIS + columnas generadas lat/lng — escribir siempre vía `location` con WKT `SRID=4326;POINT(lng lat)`), rigs, drillers, crews, crew_members, shifts, activities, consumables, contracts + 6 tablas hijas. RLS: lectura por tenant, escritura TENANT_ADMIN/MANAGER (`can_manage_master_data()`); tablas hijas autorizan vía el padre.
+- Web /catalogs con 5 CRUDs: sitios, rigs, perforistas, actividades, consumibles (server components + server actions + dialogs, i18n completo). Nav "Catálogos" habilitado.
+- Ojo Base UI Select: pasar `items` al Root o el trigger muestra el valor crudo en vez del label (resuelto en components/crud/form-select.tsx).
+- Usuario jos@sentido.mx ya con perfil ACTIVE + rol TENANT_ADMIN en tenant demo (migración 20260720000002) — puede escribir en catálogos.
+- Falta de S2: UI de cuadrillas/crew_members, import CSV consumibles (S2-WEB-05), UI regiones, pantalla B.24 datos maestros.
+
 Pendiente:
-1. Crear usuario de prueba en Supabase Dashboard → Authentication → Users (no hay signup UI a propósito) para probar login end-to-end.
-2. S1-MOB-05: pipeline EAS build (requiere `npx eas login` — cuenta Expo de Jos).
-3. Validar migración local con Docker: `npx supabase start` (requiere Docker corriendo).
-4. `SUPABASE_SERVICE_ROLE_KEY` en Preview cuando se necesite (write-only en Vercel, copiar del dashboard Supabase).
-5. Seguir backlog: docs/05 sprint S2.
+1. S1-MOB-05: pipeline EAS build (requiere `npx eas login` — cuenta Expo de Jos).
+2. Validar migración local con Docker: `npx supabase start` (requiere Docker corriendo).
+3. `SUPABASE_SERVICE_ROLE_KEY` en Preview cuando se necesite (write-only en Vercel, copiar del dashboard Supabase).
+4. Seguir backlog: resto de S2, luego S3.
 
 ## Contexto comercial (no técnico)
 

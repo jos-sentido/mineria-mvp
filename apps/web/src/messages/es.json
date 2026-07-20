@@ -36,6 +36,121 @@
     "kpiStandby": "Standby del mes",
     "emptyHint": "Los indicadores se llenarán cuando haya captura de DSRs (Sprint S4)."
   },
+  "crud": {
+    "status": "Estatus",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "deleted": "Eliminado",
+    "save": "Guardar",
+    "saving": "Guardando…",
+    "saved": "Guardado",
+    "cancel": "Cancelar",
+    "empty": "Sin registros todavía. Crea el primero con el botón de arriba.",
+    "yes": "Sí",
+    "no": "No",
+    "confirmDeleteTitle": "¿Eliminar registro?",
+    "confirmDeleteBody": "Se eliminará \"{item}\". Esta acción no se puede deshacer."
+  },
+  "catalogs": {
+    "title": "Catálogos",
+    "nav": {
+      "sites": "Sitios",
+      "rigs": "Rigs",
+      "drillers": "Perforistas",
+      "activities": "Actividades",
+      "consumables": "Consumibles"
+    },
+    "sites": {
+      "description": "Minas y sitios de operación",
+      "new": "Nuevo sitio",
+      "newTitle": "Nuevo sitio",
+      "editTitle": "Editar sitio",
+      "name": "Nombre",
+      "code": "Código",
+      "coords": "Coordenadas",
+      "lat": "Latitud",
+      "lng": "Longitud",
+      "altitude": "Altitud (m)"
+    },
+    "rigs": {
+      "description": "Máquinas de perforación",
+      "new": "Nuevo rig",
+      "newTitle": "Nuevo rig",
+      "editTitle": "Editar rig",
+      "code": "Código",
+      "type": "Tipo",
+      "brand": "Marca",
+      "model": "Modelo",
+      "brandModel": "Marca / modelo",
+      "serial": "No. de serie",
+      "site": "Sitio",
+      "noSite": "Sin asignar",
+      "types": {
+        "DIAMOND_CORE": "Diamante (core)",
+        "RC": "Circulación inversa",
+        "PERCUSSION": "Percusión",
+        "TUNNELING": "Tuneleo",
+        "OTHER": "Otro"
+      },
+      "statuses": {
+        "OPERATIONAL": "Operativo",
+        "MAINTENANCE": "Mantenimiento",
+        "INACTIVE": "Inactivo",
+        "MOVING": "En traslado"
+      }
+    },
+    "drillers": {
+      "description": "Personal operativo de perforación",
+      "new": "Nuevo perforista",
+      "newTitle": "Nuevo perforista",
+      "editTitle": "Editar perforista",
+      "fullName": "Nombre completo",
+      "employeeCode": "No. de empleado",
+      "baseRate": "Tarifa base",
+      "currency": "Moneda"
+    },
+    "activities": {
+      "description": "Catálogo de actividades para captura de DSR",
+      "new": "Nueva actividad",
+      "newTitle": "Nueva actividad",
+      "editTitle": "Editar actividad",
+      "code": "Código",
+      "labelEs": "Etiqueta (ES)",
+      "labelEn": "Etiqueta (EN)",
+      "category": "Categoría",
+      "billable": "Facturable",
+      "categories": {
+        "DRILLING": "Perforación",
+        "MOVING": "Traslado",
+        "STANDBY": "Standby",
+        "MAINTENANCE": "Mantenimiento",
+        "SAFETY": "Seguridad",
+        "OTHER": "Otro"
+      }
+    },
+    "consumables": {
+      "description": "Catálogo de consumibles",
+      "new": "Nuevo consumible",
+      "newTitle": "Nuevo consumible",
+      "editTitle": "Editar consumible",
+      "code": "Código",
+      "name": "Nombre",
+      "category": "Categoría",
+      "unit": "Unidad",
+      "defaultCost": "Costo default",
+      "currency": "Moneda",
+      "categories": {
+        "DRILL_BIT": "Broca",
+        "LUBRICANT": "Lubricante",
+        "WATER": "Agua",
+        "ADDITIVE": "Aditivo",
+        "CEMENT": "Cemento",
+        "OTHER": "Otro"
+      }
+    }
+  },
   "common": {
     "language": "Idioma",
     "spanish": "Español",
