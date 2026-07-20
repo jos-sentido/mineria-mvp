@@ -25,11 +25,12 @@ Hecho en local:
 Hecho en cloud:
 - Repo GitHub: `jos-sentido/mineria-mvp` (privado). Push de main hecho.
 - Vercel: proyecto `mineria-mvp` (team sentido) vinculado al repo, Root Directory `apps/web`, framework Next.js, auto-deploy funcionando.
+- Supabase: proyecto `mniwqxkznqpxvbxkfmds` con integración GitHub (aplica `supabase/migrations/` en cada push a main — migración inicial ya aplicada y verificada) e integración Vercel (env vars inyectadas en Production). `.env.local` de web y `.env` de mobile ya tienen URL + anon key.
 
 Pendiente (requiere acción manual de Jos):
-1. `npx supabase login` + crear proyecto + `npx supabase link` + `npx supabase db push`.
-2. Validar migración local con Docker: `npx supabase start` (no había Docker corriendo en el setup).
-3. Cargar env vars de Supabase en Vercel y en `.env.local` cuando exista el proyecto.
+1. En Vercel → Settings → Integrations → Supabase: habilitar env vars también para Preview y Development (hoy solo Production; los valores sensibles son write-only y no se pueden copiar por CLI).
+2. `npx supabase login` (opcional pero útil para `supabase link` / `db push` manual y stack local).
+3. Validar migración local con Docker: `npx supabase start` (no había Docker corriendo en el setup).
 4. Seguir backlog: docs/05 sprint S0-S1.
 
 ## Contexto comercial (no técnico)
