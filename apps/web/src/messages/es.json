@@ -154,6 +154,7 @@
       "description": "Simula un turno contra las tarifas vigentes del contrato",
       "meters": "Metros perforados",
       "avgDepth": "Prof. promedio (m)",
+      "depthNoTiers": "Solo aplica con tarifas por tier de profundidad",
       "date": "Fecha",
       "lineMeters": "Metros perforados",
       "noLines": "Sin líneas — captura metros o agrega tarifas",

@@ -154,6 +154,7 @@
       "description": "Simulate a shift against the contract's active rates",
       "meters": "Meters drilled",
       "avgDepth": "Avg depth (m)",
+      "depthNoTiers": "Only applies with depth-tier rates",
       "date": "Date",
       "lineMeters": "Meters drilled",
       "noLines": "No lines — enter meters or add rates",

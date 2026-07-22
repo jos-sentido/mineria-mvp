@@ -666,6 +666,7 @@ function SimulatorSection({ rates }: { rates: RateRow[] }) {
   const [meters, setMeters] = useState("50");
   const [depth, setDepth] = useState("");
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+  const hasTiers = rates.some((r) => r.rate_type === "PER_DEPTH_TIER");
 
   const result = useMemo(() => {
     const normalized = rates.map((r) => ({
@@ -703,7 +704,14 @@ function SimulatorSection({ rates }: { rates: RateRow[] }) {
             className="w-32"
             value={depth}
             onChange={(e) => setDepth(e.target.value)}
+            disabled={!hasTiers}
+            title={hasTiers ? undefined : t("depthNoTiers")}
           />
+          {!hasTiers && (
+            <p className="max-w-40 text-xs text-muted-foreground">
+              {t("depthNoTiers")}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <Label htmlFor="sim-date">{t("date")}</Label>
