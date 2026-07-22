@@ -36,6 +36,131 @@
     "kpiStandby": "Standby del mes",
     "emptyHint": "Los indicadores se llenarán cuando haya captura de DSRs (Sprint S4)."
   },
+  "contracts": {
+    "title": "Contratos",
+    "description": "Motor de contratos: tarifas, bonos, penalizaciones e hitos",
+    "new": "Nuevo contrato",
+    "newTitle": "Nuevo contrato",
+    "code": "Código",
+    "name": "Nombre",
+    "currency": "Moneda",
+    "billingCycle": "Ciclo de facturación",
+    "poNumber": "PO base",
+    "startsAt": "Inicio",
+    "endsAt": "Fin",
+    "notes": "Notas",
+    "validity": "Vigencia",
+    "statuses": {
+      "DRAFT": "Borrador",
+      "ACTIVE": "Activo",
+      "SUSPENDED": "Suspendido",
+      "IN_BILLING": "En facturación",
+      "CLOSED": "Cerrado"
+    },
+    "cycles": {
+      "WEEKLY": "Semanal",
+      "BIWEEKLY": "Quincenal",
+      "MONTHLY": "Mensual",
+      "CUSTOM": "Personalizado"
+    },
+    "tabs": {
+      "general": "General",
+      "rates": "Tarifas",
+      "bonuses": "Bonos",
+      "penalties": "Penalizaciones",
+      "milestones": "Hitos",
+      "scope": "Alcance",
+      "simulator": "Simulador"
+    },
+    "rates": {
+      "description": "Historial completo de tarifas — editar crea una versión nueva, nunca se mutan montos",
+      "new": "Nueva tarifa",
+      "newTitle": "Nueva tarifa",
+      "versioningHint": "Si existe una tarifa abierta equivalente, se cierra automáticamente un día antes de la nueva vigencia.",
+      "type": "Tipo",
+      "activity": "Actividad",
+      "anyActivity": "Cualquier actividad",
+      "tier": "Tier profundidad",
+      "depthFrom": "Desde (m)",
+      "depthTo": "Hasta (m)",
+      "amount": "Monto",
+      "currency": "Moneda",
+      "validity": "Vigencia",
+      "validFrom": "Vigente desde",
+      "validTo": "Vigente hasta (vacío = abierta)",
+      "types": {
+        "PER_METER": "Por metro",
+        "PER_HOUR": "Por hora",
+        "PER_DAY": "Por día",
+        "PER_ACTIVITY": "Por actividad",
+        "PER_DEPTH_TIER": "Por tier de profundidad"
+      }
+    },
+    "incentives": {
+      "bonusDescription": "Bonos que se activan cuando la condición se cumple",
+      "penaltyDescription": "Penalizaciones que se aplican cuando la condición se cumple",
+      "bonusNew": "Nuevo bono",
+      "penaltyNew": "Nueva penalización",
+      "conditionHint": "SI la métrica cumple la condición ENTONCES aplica el monto.",
+      "type": "Tipo",
+      "condition": "Condición",
+      "metric": "Métrica",
+      "op": "Operador",
+      "value": "Valor",
+      "amount": "Monto",
+      "amountType": "Tipo de monto",
+      "amountFixed": "Fijo",
+      "amountPct": "% del periodo",
+      "kinds": {
+        "GOAL_ACHIEVED": "Meta alcanzada",
+        "SAFETY": "Seguridad",
+        "EFFICIENCY": "Eficiencia",
+        "EARLY_COMPLETION": "Término anticipado",
+        "STANDBY_EXCEED": "Standby excedido",
+        "INCIDENT": "Incidente",
+        "DELAY": "Retraso",
+        "QUALITY": "Calidad"
+      },
+      "metrics": {
+        "meters_period": "Metros del periodo",
+        "meters_month": "Metros del mes",
+        "standby_hours_period": "Horas standby del periodo",
+        "downtime_unjustified_hours": "Horas de paro sin justificar",
+        "incidents_period": "Incidentes del periodo"
+      }
+    },
+    "milestones": {
+      "description": "Pagos por hito: al alcanzar profundidad, terminar pozo o llegar una fecha",
+      "trigger": "Disparador",
+      "value": "Valor",
+      "valueDepth": "Profundidad (m)",
+      "valueDate": "Fecha",
+      "valueHole": "Código de pozo",
+      "amount": "Monto",
+      "add": "Agregar",
+      "triggers": {
+        "DEPTH_REACHED": "Profundidad alcanzada",
+        "HOLE_COMPLETED": "Pozo completado",
+        "DATE_REACHED": "Fecha alcanzada"
+      }
+    },
+    "scope": {
+      "description": "Qué rigs, sitios y consumibles cubre este contrato (filtra la captura del perforista)",
+      "rigs": "Rigs",
+      "sites": "Sitios",
+      "consumables": "Consumibles"
+    },
+    "simulator": {
+      "description": "Simula un turno contra las tarifas vigentes del contrato",
+      "meters": "Metros perforados",
+      "avgDepth": "Prof. promedio (m)",
+      "date": "Fecha",
+      "lineMeters": "Metros perforados",
+      "noLines": "Sin líneas — captura metros o agrega tarifas",
+      "total": "Total",
+      "disclaimer": "Preview con el motor compartido — el cálculo oficial de facturación llega en S8."
+    }
+  },
   "crud": {
     "status": "Estatus",
     "active": "Activo",

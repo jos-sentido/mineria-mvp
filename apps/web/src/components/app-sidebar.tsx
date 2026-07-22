@@ -20,7 +20,7 @@ const NAV_ITEMS = [
   { key: "dsrs", href: "/dsrs", icon: ClipboardList, enabled: false },
   { key: "holes", href: "/holes", icon: CircleDot, enabled: false },
   { key: "programs", href: "/programs", icon: CalendarRange, enabled: false },
-  { key: "contracts", href: "/contracts", icon: FileText, enabled: false },
+  { key: "contracts", href: "/contracts", icon: FileText, enabled: true },
   { key: "billing", href: "/billing", icon: Receipt, enabled: false },
   { key: "catalogs", href: "/catalogs", icon: BookOpen, enabled: true },
   { key: "admin", href: "/admin", icon: Settings2, enabled: false },

@@ -40,6 +40,11 @@ Sprint S2 (en curso):
 - Segunda entrega S2: UI cuadrillas con asignación de integrantes (reemplazo completo de crew_members al guardar), import CSV de consumibles (parser propio client-side + upsert onConflict tenant_id,code, máx 1000 filas), UI regiones + select de región en sitios. Los 7 tabs de catálogos completos.
 - S2 cerrado salvo pantalla B.24 (datos maestros hub) que se cubrirá con el admin del tenant en S3.
 
+Sprint S3 (en curso — parte 1 hecha):
+- Motor de contratos en `packages/shared/src/contracts.ts` (puro, corre en server/cliente/mobile): evaluateCondition ({metric,op,value}, métrica ausente ⇒ false), resolveRate (vigencia inclusiva, actividad, tier [from,to), empate gana valid_from más reciente), simulateDsr (tier > tarifa plana; sin tarifa ⇒ warning, nunca inventa montos). 11 tests vitest; `pnpm test` en CI.
+- Web /contracts: lista + alta, y detalle con 7 tabs: General, Tarifas (versionadas — al agregar se auto-cierra la tarifa abierta equivalente un día antes; nunca se mutan montos), Bonos y Penalizaciones (condition builder SI métrica OP valor), Hitos, Alcance (rigs/sitios/consumibles del contrato) y Simulador (usa el motor shared client-side). Nav Contratos habilitado.
+- Falta S3 parte 2: admin usuarios/roles (S3-BE-04/05, S3-WEB-03) y admin tenant (S3-WEB-04). La invitación de usuarios requiere SUPABASE_SERVICE_ROLE_KEY server-side (existe en Vercel Production; falta en .env.local para dev).
+
 Pendiente:
 1. S1-MOB-05: pipeline EAS build (requiere `npx eas login` — cuenta Expo de Jos).
 2. Validar migración local con Docker: `npx supabase start` (requiere Docker corriendo).

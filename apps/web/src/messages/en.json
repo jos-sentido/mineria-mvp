@@ -36,6 +36,131 @@
     "kpiStandby": "Standby this month",
     "emptyHint": "KPIs will populate once DSR capture ships (Sprint S4)."
   },
+  "contracts": {
+    "title": "Contracts",
+    "description": "Contract engine: rates, bonuses, penalties and milestones",
+    "new": "New contract",
+    "newTitle": "New contract",
+    "code": "Code",
+    "name": "Name",
+    "currency": "Currency",
+    "billingCycle": "Billing cycle",
+    "poNumber": "Base PO",
+    "startsAt": "Start",
+    "endsAt": "End",
+    "notes": "Notes",
+    "validity": "Validity",
+    "statuses": {
+      "DRAFT": "Draft",
+      "ACTIVE": "Active",
+      "SUSPENDED": "Suspended",
+      "IN_BILLING": "In billing",
+      "CLOSED": "Closed"
+    },
+    "cycles": {
+      "WEEKLY": "Weekly",
+      "BIWEEKLY": "Biweekly",
+      "MONTHLY": "Monthly",
+      "CUSTOM": "Custom"
+    },
+    "tabs": {
+      "general": "General",
+      "rates": "Rates",
+      "bonuses": "Bonuses",
+      "penalties": "Penalties",
+      "milestones": "Milestones",
+      "scope": "Scope",
+      "simulator": "Simulator"
+    },
+    "rates": {
+      "description": "Full rate history — editing creates a new version, amounts are never mutated",
+      "new": "New rate",
+      "newTitle": "New rate",
+      "versioningHint": "If an equivalent open rate exists, it is auto-closed one day before the new validity.",
+      "type": "Type",
+      "activity": "Activity",
+      "anyActivity": "Any activity",
+      "tier": "Depth tier",
+      "depthFrom": "From (m)",
+      "depthTo": "To (m)",
+      "amount": "Amount",
+      "currency": "Currency",
+      "validity": "Validity",
+      "validFrom": "Valid from",
+      "validTo": "Valid to (empty = open)",
+      "types": {
+        "PER_METER": "Per meter",
+        "PER_HOUR": "Per hour",
+        "PER_DAY": "Per day",
+        "PER_ACTIVITY": "Per activity",
+        "PER_DEPTH_TIER": "Per depth tier"
+      }
+    },
+    "incentives": {
+      "bonusDescription": "Bonuses triggered when the condition is met",
+      "penaltyDescription": "Penalties applied when the condition is met",
+      "bonusNew": "New bonus",
+      "penaltyNew": "New penalty",
+      "conditionHint": "IF the metric meets the condition THEN the amount applies.",
+      "type": "Type",
+      "condition": "Condition",
+      "metric": "Metric",
+      "op": "Operator",
+      "value": "Value",
+      "amount": "Amount",
+      "amountType": "Amount type",
+      "amountFixed": "Fixed",
+      "amountPct": "% of period",
+      "kinds": {
+        "GOAL_ACHIEVED": "Goal achieved",
+        "SAFETY": "Safety",
+        "EFFICIENCY": "Efficiency",
+        "EARLY_COMPLETION": "Early completion",
+        "STANDBY_EXCEED": "Standby exceeded",
+        "INCIDENT": "Incident",
+        "DELAY": "Delay",
+        "QUALITY": "Quality"
+      },
+      "metrics": {
+        "meters_period": "Meters in period",
+        "meters_month": "Meters in month",
+        "standby_hours_period": "Standby hours in period",
+        "downtime_unjustified_hours": "Unjustified downtime hours",
+        "incidents_period": "Incidents in period"
+      }
+    },
+    "milestones": {
+      "description": "Milestone payments: on depth reached, hole completed or date reached",
+      "trigger": "Trigger",
+      "value": "Value",
+      "valueDepth": "Depth (m)",
+      "valueDate": "Date",
+      "valueHole": "Hole code",
+      "amount": "Amount",
+      "add": "Add",
+      "triggers": {
+        "DEPTH_REACHED": "Depth reached",
+        "HOLE_COMPLETED": "Hole completed",
+        "DATE_REACHED": "Date reached"
+      }
+    },
+    "scope": {
+      "description": "Which rigs, sites and consumables this contract covers (filters driller capture)",
+      "rigs": "Rigs",
+      "sites": "Sites",
+      "consumables": "Consumables"
+    },
+    "simulator": {
+      "description": "Simulate a shift against the contract's active rates",
+      "meters": "Meters drilled",
+      "avgDepth": "Avg depth (m)",
+      "date": "Date",
+      "lineMeters": "Meters drilled",
+      "noLines": "No lines — enter meters or add rates",
+      "total": "Total",
+      "disclaimer": "Preview using the shared engine — official billing math ships in S8."
+    }
+  },
   "crud": {
     "status": "Status",
     "active": "Active",
